@@ -1,0 +1,21 @@
+{
+    "request": {
+        "method": "POST",
+		"headers" : {
+      "Accept" : {
+        "contains" : "text/xml"
+      }
+	  },
+        "url": "/getClass/body-file",
+		"bodyPatterns" : [ 
+		{ "matchesXPath" : "/soap:Envelope/soap:Body/GetCitiesByCountry/CountryName[text()='India']" }
+		]
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "getClass.xml",
+		"headers":{
+         "Content-Type":"text/xml"
+      }
+    }
+}

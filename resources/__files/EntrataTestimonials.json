@@ -1,0 +1,35 @@
+{
+   "response":{
+      "requestId":"15",
+      "result":{
+         "Testimonials":{
+            "Testimonial":[
+               {
+                  "@attributes":{
+                     "node":1,
+                     "reference_id":8530,
+                     "status":"Success",
+                     "message":"Testimonial inserted successfully."
+                  }
+				} ,
+				{
+				  "@attributes":{
+                     "node":2,
+                     "reference_id":8531,
+                     "status":"Success",
+                     "message":"Testimonial inserted successfully."
+                  }
+				  },
+				  {
+				  "@attributes":{
+                     "node":3,
+                     "reference_id":8532,
+                     "status":"Success",
+                     "message":"Testimonial inserted successfully."
+                  }
+				  }
+            ]
+         }
+		 }
+      }
+   }

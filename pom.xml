@@ -1,0 +1,205 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ankit</groupId>
+	<artifactId>Ankit_TestFrameWork</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Ankit_TestFrameWork</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<src.dir>src</src.dir>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>23.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<!-- <version>3.14.0</version> -->
+			<version>3.141.59</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client-appengine</artifactId>
+			<version>1.28.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava-jdk5</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<!-- <scope>test</scope> -->
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.codoid.products</groupId> -->
+		<!-- <artifactId>fillo</artifactId> -->
+		<!-- <version>1.18</version> -->
+		<!-- </dependency> -->
+		<dependency>
+		<groupId>com.AutoItX4Java</groupId>
+		<artifactId>AutoItX4Java</artifactId>
+		<version>1</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/JARs/AutoItX4Java.jar</systemPath>
+		</dependency>
+		<dependency>
+		<groupId>com.jacob</groupId>
+		<artifactId>jacob</artifactId>
+		<version>1</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/JARs/jacob.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.21</version>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.3.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpclient</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.12.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>7.34.1</version>
+			<!-- <scope>runtime</scope> -->
+		</dependency>
+
+	</dependencies>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+
+		<!-- <pluginManagement> -->
+		<!-- <plugins> -->
+		<!-- <plugin> -->
+		<!-- <groupId>org.apache.maven.plugins</groupId> -->
+		<!-- <artifactId>maven-surefire-plugin</artifactId> -->
+		<!-- <version>2.19.1</version> -->
+		<!-- </plugin> -->
+		<!-- </plugins> -->
+		<!-- </pluginManagement> -->
+		<plugins>
+			<!-- plugin executes the testng tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<skip>false </skip>
+					<forkCount>0</forkCount>
+					<!-- Suite testng xml file to consider for test execution -->
+					<suiteXmlFiles>
+						<!-- <suiteXmlFile>${project.basedir}/TestNg.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>TestNg.xml</suiteXmlFile> -->
+						<!-- <suiteXmlFile>LeadGenTestNg.xml</suiteXmlFile> -->
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<!-- Suite testng xml file to consider for test execution -->
+					<!-- <suiteXmlFiles> -->
+					<!-- <suiteXmlFile>${project.basedir}/TestNg.xml</suiteXmlFile> -->
+					<!-- <suiteXmlFile>TestNg.xml</suiteXmlFile> -->
+					<!-- </suiteXmlFiles> -->
+					<systemProperties>
+						<property>
+							<name>url</name>
+							<value>${url}</value>
+						</property>
+						<property>
+							<name>DataBaseFileName</name>
+							<value>${DataBaseFileName}</value>
+						</property>
+						<property>
+							<name>to</name>
+							<value>${to}</value>
+						</property>
+						<property>
+							<name>BrowserConsoleLogs</name>
+							<value>${BrowserConsoleLogs}</value>
+						</property>
+						<property>
+							<name>cc</name>
+							<value>${cc}</value>
+						</property>
+						<property>
+							<name>BrowserName</name>
+							<value>${BrowserName}</value>
+						</property>
+						<property>
+							<name>ScreenShot</name>
+							<value>${ScreenShot}</value>
+						</property>
+					</systemProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

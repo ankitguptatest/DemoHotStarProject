@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="20" name="Failed suite [NexusSMS Report ]" parallel="tests">
+  <test thread-count="20" name="NexusSMSTestSuite(failed)" parallel="tests">
+    <classes>
+      <class name="com.birdeye.NexusSMS.NexusSMSTestSuite">
+        <methods>
+          <include name="FinishTestSuite"/>
+          <include name="smsTypes"/>
+          <include name="initilizePages"/>
+          <include name="finshTestSuites1"/>
+          <include name="StartTest"/>
+          <include name="loadObjectRepo"/>
+          <include name="TearDownTest"/>
+        </methods>
+      </class> <!-- com.birdeye.NexusSMS.NexusSMSTestSuite -->
+    </classes>
+  </test> <!-- NexusSMSTestSuite(failed) -->
+</suite> <!-- Failed suite [NexusSMS Report ] -->

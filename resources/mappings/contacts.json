@@ -1,0 +1,20 @@
+{
+   "request":{
+      "urlPathPattern" :"/api/v3/contacts/[0-9]+",
+      "method":"GET",
+	  "queryParameters" : {
+      "organization_id" : {
+        "matches" : "[0-9]+"
+      }
+	  
+   }
+   
+   },
+   "response":{
+      "status":200,
+	  "bodyFileName": "zohoarray.json",
+      "headers":{
+         "Content-Type":"application/json"
+      }
+   }
+}

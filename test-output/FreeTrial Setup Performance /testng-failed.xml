@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="20" name="Failed suite [FreeTrial Setup Performance ]" parallel="tests">
+  <test thread-count="20" name="FreeTrialBusinessAddTime(failed)" parallel="tests">
+    <parameter name="BrowserName" value="chrome"/>
+    <classes>
+      <class name="com.birdeye.FreeTrail.FreeTrialBusinessAddTime">
+        <methods>
+          <include name="removeBusinessFromProdAfterRun"/>
+          <include name="FinishTestSuite"/>
+          <include name="StartTest1"/>
+          <include name="initilizePages"/>
+          <include name="addBusiness"/>
+          <include name="StartTest"/>
+          <include name="finshTestSuites1"/>
+          <include name="TearDownTest"/>
+          <include name="loadObjectRepo"/>
+        </methods>
+      </class> <!-- com.birdeye.FreeTrail.FreeTrialBusinessAddTime -->
+    </classes>
+  </test> <!-- FreeTrialBusinessAddTime(failed) -->
+</suite> <!-- Failed suite [FreeTrial Setup Performance ] -->

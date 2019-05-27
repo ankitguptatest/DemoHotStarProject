@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <listeners>
+    <listener class-name="com.birdeye.testNgListner.PriorityListners"/>
+    <listener class-name="com.birdeye.testNgListner.RetryListener"/>
+  </listeners>
+  <test thread-count="5" name="Automation-Test(failed)">
+    <parameter name="BrowserName" value="chrome"/>
+    <classes>
+      <class name="com.birdeye.Suites.Setup_SocailAccountTCs">
+        <methods>
+          <include name="TearDownTest"/>
+          <include name="addRemoveGooglepages" invocation-numbers="0 0"/>
+          <include name="valid_Login"/>
+          <include name="finshTestSuites1"/>
+          <include name="StartTest"/>
+          <include name="TearDownTest1"/>
+          <include name="initilizePages"/>
+        </methods>
+      </class> <!-- com.birdeye.Suites.Setup_SocailAccountTCs -->
+    </classes>
+  </test> <!-- Automation-Test(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

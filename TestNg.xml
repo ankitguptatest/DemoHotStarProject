@@ -1,0 +1,22 @@
+<!-- <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" > -->
+<suite name="Hot Star" verbose="1">
+	<test name="Automation-Test">
+		<listeners>
+		      <listener class-name="com.ankit.testNgListner.PriorityListners" />
+			<listener class-name="com.ankit.testNgListner.RetryListener" />
+		</listeners>
+<!-- 		<parameter name="BrowserName" value="firefox"/> -->
+		<parameter name="BrowserName" value="chrome"/>
+<!-- 		<parameter name="BrowserName" value="ie"/> -->
+<!-- 		<parameter name="BrowserName" value="edge"/> -->
+		<classes>
+			<class name="com.ankit.Suites.InitilizeClass" />
+			<class name="com.ankit.Suites.HotStarSuite" />
+			<methods>
+			<include name="hotStarHomePage" />
+			<include name="hotStar_Login" />
+			</methods>
+		</classes>
+	</test>
+</suite>
+ 

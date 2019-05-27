@@ -1,0 +1,25 @@
+{
+   "request":{
+      "urlPath" :"/resources/v1/customer/checkin",
+      "method":"POST",
+	  "bodyPatterns":[
+         {
+            "equalToJson":"{\"name\":\"Testapimock Febtwentythree\",\"emailId\":\"testapimock@birdeye.com\",\"phone\":\"\",\"smsEnabled\":1}"
+         }
+      ],
+	  "queryParameters" : {
+      "bid" : {
+        "matches" : "[0-9]+"
+      },
+	  "api_key": {
+		"equalTo" : "uu7qrdki2HkQ7H7yf3diI92dkQ6uy7Hd"
+	  }
+	  
+   }
+   
+   },
+   "response":{
+      "status":500,
+	  "body": "{\"message\": \"Internal Server Error\"}" 
+   }
+}

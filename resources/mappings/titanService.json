@@ -1,0 +1,27 @@
+{
+   "request":{
+      "urlPathPattern" :"/v1/jobs",
+      "method":"GET",
+	   "queryParameters" : {
+      "serviceTitanApiKey" : {
+        "matches" : ".*"
+      },
+	  "filter.status": {
+		"equalTo" : "Completed"
+	  },
+	   "filter.completedAfter": {
+		"matches" : ".*"
+	  },
+	  "filter.completedBefore": {
+	  "matches" : ".*"
+	  }	 
+	}
+   },
+  "response":{
+      "status":200,
+	  "bodyFileName": "serviceTitan.json",
+      "headers":{
+         "Content-Type":"application/json"
+      }
+   }
+}

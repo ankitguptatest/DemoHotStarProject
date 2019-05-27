@@ -1,0 +1,68 @@
+{
+  "response": {
+    "requestId": "15",
+    "code": 200,
+    "result": {
+      "PhysicalProperty": {
+        "Property": [
+          {
+            "PropertyID": 22090,
+            "MarketingName": "55 Hundred",
+            "Type": "Apartment",
+            "General_ID": "co405",
+            "YearBuilt": "2009",
+            "ShortDescription": "<b>LIVE AT THE SPEED OF LIGHT.</b><br>Let 55 HUNDRED be your guide to everything fashionable, metropolitan and influential in the D.C. area.",
+            "LongDescription": "The energy this city has is contagious. The pace is fast. The trends are prolific. The flavors are abundant as well as diverse. Let <b>55 HUNDRED</b> be your guide to everything fashionable, metropolitan and influential in the D.C. area. Our modern apartments provide you with the perfect platform to radiate in every way. Let’s start at the top. Our rooftop swimming pool gives you the ultimate view from any angle day or night. Inside our mid-rise urban community, you’ll discover pops of color and impeccable design. Boutique hotel style is the inspiration. Inside yournapartment, the designer touches and intelligent pampering continue. Live here and nothing will slow you down.",
+            "webSite": "http://www.55hundredlifestyle.com",
+            "Address": {
+              "@attributes": {
+                "AddressType": "property"
+              },
+              "Address": "5500 Columbia Pike",
+              "City": "Arlington",
+              "State": "VA",
+              "PostalCode": "22204",
+              "Country": "US",
+              "Email": "devsupport@propertysolutions.lcl"
+            },
+            "PostMonths": {
+              "ArPostMonth": "01/2014",
+              "ApPostMonth": "01/2014",
+              "GlPostMonth": "01/2014"
+            },
+            "IsDisabled": 0,
+            "IsFeaturedProperty": 0
+          },
+          {
+            "PropertyID": 119717,
+            "MarketingName": "The Alexan",
+            "Type": "Apartment",
+            "General_ID": "ax128",
+            "YearBuilt": "2015",
+            "ShortDescription": "Coming Soon - Spring 2016! THE Alexan will consist of 365 luxury studio, one and two-bedroom rental apartments in Downtown Dallas, TX.",
+            "LongDescription": "Coming Soon - Spring 2016! THE Alexan will consist of 365 luxury studio, one and two-bedroom rental apartments in Downtown Dallas, TX.rn<br>rn<br>rnWhat's old is new again. Welcome to The Alexan, where we've juxtaposed the style of classic, high-end Dallas with modern details. With close proximity to other time-honored landmarks like the Waterfall Billboard and Little Doe's Restaurant and close to UpTown and Victory Park, this club-style collection of apartments has an unbelievable 360° view, yet blends in with the Dallas skyline. We're looking for those who appreciate craft, who appreciate the sophisticated details. When you live at The Alexan, you feel like you're living in your own private, secluded manor. It's a classic.",
+            "webSite": "http://www.livethealexan.com/",
+            "Address": {
+              "@attributes": {
+                "AddressType": "property"
+              },
+              "Address": "3333 Harry Hines Blvd",
+              "City": "Dallas",
+              "State": "TX",
+              "PostalCode": "75201",
+              "Country": "US",
+              "Email": "devsupport@propertysolutions.lcl"
+            },
+            "PostMonths": {
+              "ArPostMonth": "10/2014",
+              "ApPostMonth": "10/2014",
+              "GlPostMonth": "10/2014"
+            },
+            "IsDisabled": 0,
+            "IsFeaturedProperty": 0
+          }
+        ]
+      }
+    }
+  }
+}

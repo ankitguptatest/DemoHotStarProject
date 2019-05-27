@@ -1,0 +1,17 @@
+{
+   "request":{
+      "urlPathPattern" :"/resources/v1/customer/checkin/business/[0-9]+",
+      "method":"POST",
+	  "bodyPatterns":[
+         {
+            "matchesJsonPath":"$.firstName"
+         }
+      ]
+  
+   },
+   "response":{
+	  "proxyBaseUrl" : "http://13.56.152.254:80",
+      "status":200,
+	  "body": "{\"message\": \"Checkin successful\"}" 
+   }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.birdeye.BusinessImageCheckSuite.FreeBusinessImagesCheck">
+        <methods>
+          <include name="StartTest"/>
+          <include name="initilizePages"/>
+          <include name="finshTestSuites1"/>
+          <include name="TearDownTest"/>
+          <include name="GetBusinessImages"/>
+        </methods>
+      </class> <!-- com.birdeye.BusinessImageCheckSuite.FreeBusinessImagesCheck -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BirdEye SiteMap Links Verification ]">
+  <test thread-count="5" name="BirdEyeLinks(failed)">
+    <parameter name="BrowserName" value="chrome"/>
+    <classes>
+      <class name="com.birdeye.LinkCheckSuites.BirdEyeLinks">
+        <methods>
+          <include name="birdEyeSiteMapChilds_Links"/>
+          <include name="birdEyeSiteMap_Links"/>
+          <include name="finshTestSuites1"/>
+          <include name="StartTest"/>
+          <include name="initilizePages"/>
+          <include name="TearDownTest"/>
+        </methods>
+      </class> <!-- com.birdeye.LinkCheckSuites.BirdEyeLinks -->
+    </classes>
+  </test> <!-- BirdEyeLinks(failed) -->
+  <test thread-count="5" name="BirdEyeBlogsLinks(failed)">
+    <parameter name="BrowserName" value="chrome"/>
+    <classes>
+      <class name="com.birdeye.LinkCheckSuites.BirdEyeBlogsLinks">
+        <methods>
+          <include name="TearDownTest"/>
+          <include name="birdEyeBlogsChilds_Links"/>
+          <include name="birdEyeBlogs_Links"/>
+          <include name="finshTestSuites1"/>
+          <include name="StartTest"/>
+          <include name="initilizePages"/>
+        </methods>
+      </class> <!-- com.birdeye.LinkCheckSuites.BirdEyeBlogsLinks -->
+    </classes>
+  </test> <!-- BirdEyeBlogsLinks(failed) -->
+</suite> <!-- Failed suite [BirdEye SiteMap Links Verification ] -->

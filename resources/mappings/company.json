@@ -1,0 +1,20 @@
+{
+   "request":{
+      "urlPathPattern" :"/v3/company/[0-9]+/invoice/[0-9]+",
+      "method":"GET",
+	  "queryParameters" : {
+      "minorversion" : {
+        "matches" : "[0-9]+"
+      }
+	  
+   }
+   
+   },
+   "response":{
+      "status":200,
+	  "bodyFileName": "customer.json",
+      "headers":{
+         "Content-Type":"application/json"
+      }
+   }
+}

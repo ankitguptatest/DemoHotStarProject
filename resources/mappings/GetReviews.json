@@ -1,0 +1,27 @@
+{
+   "request":{
+      "urlPathPattern" :"/resources/v1/review/businessid/([0-9]+)",
+      "method":"GET",
+	   "queryParameters" : {
+      "api_key" : {
+        "matches" : ".*"
+      },
+	  "sindex": {
+		"matches" : "[0-9]+"
+	  },
+	   "fdate": {
+		"matches" : "[0-9]{2}/[0-9]{2}/[0-9]{4}"
+	  },
+	  "tdate": {
+	  "matches" : "[0-9]{2}/[0-9]{2}/[0-9]{4}"
+	  }	 
+	}
+   },
+  "response":{
+      "status":200,
+	  "bodyFileName": "EntrataBirdEyeReviews.json",
+      "headers":{
+         "Content-Type":"application/json"
+      }
+   }
+}
