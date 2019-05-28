@@ -66,24 +66,24 @@
 			<version>6.14.3</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>com.codoid.products</groupId> -->
-		<!-- <artifactId>fillo</artifactId> -->
-		<!-- <version>1.18</version> -->
-		<!-- </dependency> -->
 		<dependency>
-		<groupId>com.AutoItX4Java</groupId>
-		<artifactId>AutoItX4Java</artifactId>
-		<version>1</version>
-		<scope>system</scope>
-		<systemPath>${project.basedir}/JARs/AutoItX4Java.jar</systemPath>
+			<groupId>com.codoid.products</groupId>
+			<artifactId>fillo</artifactId>
+			<version>1.18</version>
 		</dependency>
 		<dependency>
-		<groupId>com.jacob</groupId>
-		<artifactId>jacob</artifactId>
-		<version>1</version>
-		<scope>system</scope>
-		<systemPath>${project.basedir}/JARs/jacob.jar</systemPath>
+			<groupId>com.AutoItX4Java</groupId>
+			<artifactId>AutoItX4Java</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/JARs/AutoItX4Java.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.jacob</groupId>
+			<artifactId>jacob</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/JARs/jacob.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -124,7 +124,51 @@
 			<version>7.34.1</version>
 			<!-- <scope>runtime</scope> -->
 		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<!-- Rest assurad Jar -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.12</version>
+		</dependency>
+		<!-- json schema validator -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.0.2</version>
+		</dependency>
 
+		<!-- used for regrx, response for API -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>java-hamcrest</artifactId>
+			<version>2.0.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160212</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.2.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

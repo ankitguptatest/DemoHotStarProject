@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.time.StopWatch;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -152,74 +151,6 @@ public class SeleniumWrappers extends ToolWrappers {
 		return flag;
 	}
 	
-	public StopWatch clickWithOutWait(TestSuites ts,StopWatch pageLoad, String elementPath,String...parms) throws Exception {
-		String method = new Object(){}.getClass().getEnclosingMethod().getName()+" on";
-		boolean flag = false;
-		try {
-//			WebElement we = ts.getFindLocator().getWebElement(ts,elementPath, parms);
-			WebElement we = ts.getFindLocator().getWebElementVisiblity(ts,elementPath, parms);
-			if (we !=null &&verifyPresenceOfElement(ts,we)){
-				try{
-					we.click();
-					Thread.sleep(200);
-					pageLoad.start();
-					flag = true;
-					
-					//un-commenting below logs for debugging report
-					ts.getTestReporting().addTestSteps(ts,method, elementPath+ " "+getAllString(parms), "PASS",false);
-//					Thread.sleep(CommonDataMaps.waitConfigValues.get("second_2"));
-					}catch(Exception e){
-						try{
-							Actions ac = getActionsDriver(ts);
-							ac.moveToElement(we).click().build().perform();
-						}catch(Exception e1){
-							ts.getTestReporting().addTestSteps(ts,method,"Exception: "+e.getMessage()+" for "+elementPath+ " "+getAllString(parms), "WARNING");
-							System.out.println("Exception occurred while clicking on: "+elementPath+" "+e.getMessage());
-							throw new Exception("Exception occurred while clicking on: "+elementPath+" "+e.getMessage());	
-						}
-						System.out.println("Exception occurred while clicking on: "+elementPath+" "+e.getMessage());
-					}
-				}
-				else{
-					 ts.getTestReporting().addTestSteps(ts,method+" "+elementPath+ " "+getAllString(parms),"Element is present but not dispaly", "WARNING");
-//					throw new Exception("Element: "+elementPath+" isn't present");
-				}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Unable to get the webElement of: "+elementPath);
-			ts.getTestReporting().addTestSteps(ts,method,"Unable to get the webElement :"+elementPath+ " "+getAllString(parms), "WARNING");
-			throw new Exception(e.getMessage());
-		}
-		return pageLoad;
-	}
-	
-	
-	
-	public StopWatch getTimeTillElementPresent(TestSuites ts,StopWatch pageLoad, long time, String elementPath,String...parms) throws Exception {
-		String method = new Object(){}.getClass().getEnclosingMethod().getName()+" on";
-		boolean flag = false;
-		try {
-			pageLoad.start();
-			//			WebElement we = ts.getFindLocator().getWebElement(ts,elementPath, parms);
-			WebElement we = ts.getFindLocator().getWebElement(ts,elementPath,time, parms);
-			if (we !=null &&verifyPresenceOfElement(ts,we)){
-				pageLoad.stop();
-				ts.getTestReporting().addTestSteps(ts,method, elementPath+ " "+getAllString(parms), "PASS",false);
-			}
-			else{
-				ts.getTestReporting().addTestSteps(ts,method+" "+elementPath+ " "+getAllString(parms),"Element is present but not dispaly", "WARNING");
-				//					throw new Exception("Element: "+elementPath+" isn't present");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("Unable to get the webElement of: "+elementPath);
-			ts.getTestReporting().addTestSteps(ts,method,"Unable to get the webElement :"+elementPath+ " "+getAllString(parms), "WARNING");
-			throw new Exception(e.getMessage());
-		}
-		return pageLoad;
-	}
-	
-	
 	
 	
 	/**
@@ -272,9 +203,6 @@ public class SeleniumWrappers extends ToolWrappers {
 		}
 		return flag;
 	}
-	
-	
-	
 	
 	
 	
@@ -1802,8 +1730,6 @@ public class SeleniumWrappers extends ToolWrappers {
 //			String url = ts.getDriver().getCurrentUrl();
 //			ts.getDriver().navigate().to(url);
 //		}
-		StopWatch pageLoad = new StopWatch();
-        pageLoad.start();
 //		String dest = path+File.separator+"Image_"+JavaWrappers.getCurrentTime("HH_MM_ss");
 //		File destPath =  new File(dest); 
 		String path = ts.getIndividulaSuiteReportFolder()+File.separator+"TestCases"+File.separator+"ScreenShot";
@@ -1821,9 +1747,6 @@ public class SeleniumWrappers extends ToolWrappers {
 //			FileUtils.moveFile(sourcePath, newImageFile);
 			FileUtils.copyFile(sourcePath, newImageFile);
 //			FileUtils.deleteQuietly(sourcePath);
-			pageLoad.stop();
-			long pageLoadTime_ms = pageLoad.getTime();
-	        long pageLoadTime_Seconds = pageLoadTime_ms / 1000;
 //	        System.out.println("Total ScreenShot Time: " + pageLoadTime_ms + " milliseconds");
 		}catch(org.openqa.selenium.TimeoutException e){
 			System.out.println("Page timeout Exception occured"+e.getMessage());

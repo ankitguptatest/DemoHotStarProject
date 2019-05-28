@@ -20,10 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
 
-import io.netty.util.internal.SystemPropertyUtil;
 import io.restassured.response.Response;
-import net.lightbody.bmp.BrowserMobProxy;
-import net.lightbody.bmp.core.har.Har;
 
 
 public class TestReporting extends SuiteReporting{

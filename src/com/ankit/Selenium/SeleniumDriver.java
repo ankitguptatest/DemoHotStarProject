@@ -251,40 +251,17 @@ public class SeleniumDriver{
 					System.setProperty("webdriver.chrome.driver", browser_driver_path + "chromedriver");
 					option.addArguments(System.getProperty("user.name")+"/Library/Application Support/Google/Chrome/Default");
 				}
-				//				Map<String, Object> prefs = new HashMap<String, Object>();
-				//				prefs.put("credentials_enable_service", false);
-				//				prefs.put("profile.password_manager_enabled", false);
-				//				option.setExperimentalOption("prefs", prefs);
-				//								option.addArguments("--start-maximized");
-				//				threadDriver.set(new ChromeDriver(option));
-
-				//				cap = new DesiredCapabilities().chrome();
-				//				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				//ChromeOptions options = new ChromeOptions();
-				//								option.addArguments("test-type", "start-maximized","no-default-browser-check");    
-				//				cap.setCapability(ChromeOptions.CAPABILITY, option);
 				option.addArguments("--test-type");
 				option.addArguments("--enable-automation"); 
 				option.addArguments("--start-maximized");
-				//options.addArguments("--disable-application-cache");
-				//				option.addArguments("--disable-extensions");
-				//options.addArguments("--disable-popup-blocking");
 				Map<String, Object> prefs = new HashMap<String, Object>();
 				prefs.put("credentials_enable_service", false);
 				prefs.put("profile.password_manager_enabled", false);
 				option.setExperimentalOption("prefs", prefs);
-				//				driver = new ChromeDriver(cap);
 			}
 			else if (name.equalsIgnoreCase("edge")){
 				browser_driver_path = new MachineSearch().serachMachineForFile(browser_driver_path,"MicrosoftWebDriver.exe");
 				System.setProperty("webdriver.edge.driver", browser_driver_path);
-				//		driver =  new InternetExplorerDriver();
-				//				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				//				cap.setCapability("ie.enableFullPageScreenshot", false);
-				//								cap.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
-				//								cap.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-				//								cap.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				//								cap.setCapability(InternetExplorerDriver.UNEXPECTED_ALERT_BEHAVIOR, UnexpectedAlertBehaviour.ACCEPT);
 				EdgeOptions option = new EdgeOptions();
 				option.setCapability("ie.enableFullPageScreenshot", false);
 				option.setCapability("disable-save-password-bubble", true);
@@ -293,13 +270,6 @@ public class SeleniumDriver{
 			else if (name.equalsIgnoreCase("internet") || name.contains("explorer") || name.contains("ie") || name.equalsIgnoreCase("IE")){
 				browser_driver_path = new MachineSearch().serachMachineForFile(browser_driver_path,"IEDriverServer.exe");
 				System.setProperty("webdriver.ie.driver", browser_driver_path);
-				//		driver =  new InternetExplorerDriver();
-				//				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				//				cap.setCapability("ie.enableFullPageScreenshot", false);
-				//								cap.setCapability(InternetExplorerDriver.ENABLE_ELEMENT_CACHE_CLEANUP, true);
-				//								cap.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-				//								cap.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-				//								cap.setCapability(InternetExplorerDriver.UNEXPECTED_ALERT_BEHAVIOR, UnexpectedAlertBehaviour.ACCEPT);
                 InternetExplorerOptions option = new InternetExplorerOptions();
               option.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
                 option.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
@@ -314,16 +284,8 @@ public class SeleniumDriver{
 				option.setCapability("ignoreZoomSetting", true);
 				option.setCapability("ignoreProtectedModeSettings", false);
 				option.setCapability("forceCreateProcessAp", true);
-//				option.setCapability("disable-save-password-bubble", true);
 				driver = new InternetExplorerDriver(option);
 			}
-			//			else if (name.equalsIgnoreCase("HTML")){
-			//				cap = new DesiredCapabilities().htmlUnit();
-			//				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-			//				cap.setJavascriptEnabled(true);
-			//				cap.setCapability("takesScreenshot", false);
-			//				driver = new HtmlUnitDriver();
-			//			}
 			else if (name.equalsIgnoreCase("safari")) {
 				driver = new org.openqa.selenium.safari.SafariDriver();
 			}
@@ -331,17 +293,7 @@ public class SeleniumDriver{
 				if (platform.startsWith("Windows"))
 					browser_driver_path = new MachineSearch().serachMachineForFile(browser_driver_path,"phantomjs.exe");
 				System.setProperty("phantomjs.binary.path",browser_driver_path);
-				//				cap = new DesiredCapabilities().phantomjs();
-				//				cap.setJavascriptEnabled(true); // not really needed: JS enabled by default
-				//				cap.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, browser_driver_path);
-				//				cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-				//				cap.setCapability("takesScreenshot", true);
-				//				driver = new PhantomJSDriver(cap);
 			}
-			//			else if (name.equalsIgnoreCase("PH")){
-			//				System.setProperty("phantomjs.binary.path", "D:\\Eclipse Code\\Drivers\\phantomjs-2.0.0-windows\\bin\\phantomjs.exe");
-			//				threadDriver.set(new PhantomJSDriver());
-			//			}
 			else{
 				System.out.println("NO browser matched from the above condition: "+name);	
 			}
@@ -357,20 +309,12 @@ public class SeleniumDriver{
 		closeIfOpenMoreThnOne(driver);
 
 		try{
-			//		driver.navigate().to(url);
 			driver.get(url);
 			Thread.sleep(CommonDataMaps.waitConfigValues.get("second_2"));
 		}catch(Exception e){
 			e.printStackTrace();
 			driver.navigate().to(url);
 		}
-		//	System.out.println("usr has been opened");
-
-		//		driver.manage().deleteAllCookies();
-		//		driver.manage().timeouts().pageLoadTimeout(CommonDataMaps.waitConfigValues.get("PageTimeOut"), TimeUnit.SECONDS);
-		//		driver.manage().timeouts().setScriptTimeout(150, TimeUnit.SECONDS);
-		//		driver.manage().timeouts().implicitlyWait(DataHashMap.waitConfigValues.get("ImplicitWait"), TimeUnit.SECONDS);	
-		//		System.out.println("done");
 		return driver;
 	}
 	

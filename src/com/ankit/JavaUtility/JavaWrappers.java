@@ -36,11 +36,10 @@ import java.util.TimeZone;
 
 import org.apache.commons.digester.plugins.strategies.FinderFromFile;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import com.ankit.DataMaps.CommonDataMaps;
 import com.ankit.Selenium.TestSuites;
-import com.ankit.propertiesFileUtility.PropertiseFileUtility;
 import com.ankit.tools.ToolWrappers;
 
 public class JavaWrappers {
